@@ -1,5 +1,3 @@
-<script src="/path/to/vue.js"></script>
-<script src="/path/to/vue-router.js"></script>
 
 
 <template>
@@ -9,24 +7,31 @@
     <h1>Que voulez vous faire ?</h1>
       <button v-on:click="say('liste des machines')">Consulter la liste des machines</button>
       <button v-on:click="say('voir la carte')">Voir la carte</button>
+      
+    <machines-list></machines-list>
+    <machines-map></machines-map>
+
+   </div>
 
 
-
-  </div>
 </template>
 
-<script>export default {
-  name: 'app',
-    methods: {
+<script>
+    import MachinesList from './MachinesList.vue'
+    import MachinesMap from './MachinesMap.vue'
+
+    export default {
+      name: 'app',
+        components:{
+          'machines-list': MachinesList,
+            'machines-map': MachinesMap
+        },
+      methods: {
         say: function (message) {
             alert(message)
+         }
+      }
     }
-  }
-}
-
-
-
-
 
 </script>
 
@@ -46,6 +51,7 @@ button {
     color: white;
     margin: 10px;
     padding: 15px;
+    border-radius: 4px;
 }
 
 img {
