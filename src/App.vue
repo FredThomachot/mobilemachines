@@ -2,30 +2,26 @@
 
 <template>
   <div id="app">
+      <h1>Repair Center</h1>
       <img src="./src/assets/logo.jpg">
 
-    <h1>Que voulez vous faire ?</h1>
+    <div>
+      <h1>Que voulez vous faire ?</h1>
       <button v-on:click="say('liste des machines')">Consulter la liste des machines</button>
       <button v-on:click="say('voir la carte')">Voir la carte</button>
-      
-    <machines-list></machines-list>
-    <machines-map></machines-map>
+    </div>
 
-   </div>
+    <router-view></router-view>
 
-
+  </div>
 </template>
 
 <script>
-    import MachinesList from './MachinesList.vue'
-    import MachinesMap from './MachinesMap.vue'
+
 
     export default {
       name: 'app',
-        components:{
-          'machines-list': MachinesList,
-            'machines-map': MachinesMap
-        },
+
       methods: {
         say: function (message) {
             alert(message)
@@ -52,6 +48,7 @@ button {
     margin: 10px;
     padding: 15px;
     border-radius: 4px;
+    font-family: Calibri;
 }
 
 img {
@@ -61,6 +58,7 @@ img {
 
 h1, h2 {
   font-weight: normal;
+    font-family: fantasy;
 }
 
 ul {
