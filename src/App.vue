@@ -2,13 +2,15 @@
 
 <template>
   <div id="app">
-      <h1>Repair Center</h1>
+      <h1>Centre de réparation des machines</h1>
       <img src="./src/assets/logo.jpg">
 
     <div>
       <h1>Que voulez vous faire ?</h1>
-      <button v-on:click="say('liste des machines')">Consulter la liste des machines</button>
-      <button v-on:click="say('voir la carte')">Voir la carte</button>
+
+        <router-link to="/list"  tag="button">Consulter la liste des machines</router-link>
+        <router-link to="/map" tag="button">Voir la carte</router-link>
+
     </div>
 
     <router-view></router-view>
@@ -19,15 +21,9 @@
 <script>
 
 
-    export default {
+   /* export default {
       name: 'app',
-
-      methods: {
-        say: function (message) {
-            alert(message)
-         }
-      }
-    }
+    }*/
 
 </script>
 
@@ -44,11 +40,15 @@
 button {
     background-color: #42b883;
     border: none;
-    color: white;
     margin: 10px;
     padding: 15px;
     border-radius: 4px;
     font-family: Calibri;
+    font-size: 16px;
+    color: white;
+}
+.router-link-active {
+    background-color: #35495e;
 }
 
 img {
