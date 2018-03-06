@@ -8,7 +8,8 @@
     <div>
       <h1>Que voulez vous faire ?</h1>
 
-        <router-link to="/list"  tag="button">Consulter la liste des machines</router-link>
+        <router-link to="/" tag="button">Home</router-link>
+        <router-link to="/list" tag="button">Consulter la liste des machines</router-link>
         <router-link to="/map" tag="button">Voir la carte</router-link>
 
     </div>

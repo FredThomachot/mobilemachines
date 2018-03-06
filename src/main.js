@@ -3,12 +3,14 @@ import App from './App.vue'
 import VueRouter from 'vue-router'
 import MachinesList from './MachinesList.vue'
 import MachinesMap from './MachinesMap.vue'
+import Machine from './Machine.vue'
 
 Vue.use(VueRouter);
 
 const routes =[
     {path:'/list', component: MachinesList},
-    {path:'/map', component: MachinesMap}
+    {path:'/map', component: MachinesMap},
+    {path:'/machine', component: Machine}
 ];
 
 const router = new VueRouter({
