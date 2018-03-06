@@ -7,6 +7,8 @@ import Machine from './Machine.vue'
 
 Vue.use(VueRouter);
 
+Vue.component('template-machine',Machine);
+
 const routes =[
     {path:'/list', component: MachinesList},
     {path:'/map', component: MachinesMap},
