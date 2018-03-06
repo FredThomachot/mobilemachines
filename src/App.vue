@@ -1,6 +1,7 @@
 
 
 <template>
+
   <div id="app">
       <h1>Centre de réparation des machines</h1>
       <img src="./src/assets/logo.jpg">
@@ -17,6 +18,7 @@
     <router-view></router-view>
 
   </div>
+   
 </template>
 
 <script>
@@ -36,7 +38,10 @@
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+
+
 }
+
 
 button {
     background-color: #42b883;

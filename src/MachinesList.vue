@@ -1,7 +1,7 @@
 <template>
     <div>
        <h1>Liste des machines</h1>
-        <p><template-machine :name="name" :status="status" :checkedAt="checkedAt"> </template-machine></p>
+        <p v-for="machine in machines"><template-machine :name="machine.name" :status="machine.status" :checkedAt="machine.checkedAt"> </template-machine></p>
    </div>
 
 </template>
@@ -10,9 +10,17 @@
     export default {
         data() {
             return {
-                name: 'Whatelse ?!',
-                status: true,
-                checkedAt: new Date().toLocaleString()
+                machines: [{
+                    id: 1,
+                    name: 'Whatelse ?!',
+                    status: true,
+                    checkedAt: new Date().toLocaleString()
+                }, {
+                    id: 2,
+                    name: 'Brokken',
+                    status: false,
+                    checkedAt: new Date().toLocaleString()
+                }]
             }
         }
     }
@@ -31,7 +39,9 @@
     p {
         border: limegreen;
         border-style: groove;
+        background-color: aliceblue;
     }
+
 
 
 
