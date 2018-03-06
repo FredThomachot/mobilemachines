@@ -4,7 +4,7 @@
 
   <div id="app">
       <h1>Centre de réparation des machines</h1>
-      <img src="./src/assets/logo.jpg">
+      <img src="./assets/logo.jpg">
 
     <div>
       <h1>Que voulez vous faire ?</h1>
@@ -18,7 +18,7 @@
     <router-view></router-view>
 
   </div>
-   
+
 </template>
 
 <script>

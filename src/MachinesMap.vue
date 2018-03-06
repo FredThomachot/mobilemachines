@@ -1,6 +1,12 @@
 <template>
     <div>
         <h1>Carte des machines</h1>
+        <gmap-map
+                :center="center"
+                :zoom="7"
+                style="width: 500px; height: 300px"
+        >
+        </gmap-map>
     </div>
 </template>
 
