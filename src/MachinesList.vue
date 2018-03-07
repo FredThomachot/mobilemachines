@@ -20,6 +20,11 @@
                     name: 'Brokken',
                     status: false,
                     checkedAt: new Date().toLocaleString()
+                }, {
+                    id: 3,
+                    name: 'Holyfeuk',
+                    status: true,
+                    checkedAt: new Date().toLocaleString()
                 }]
             }
         }
@@ -37,9 +42,11 @@
     }
 
     p {
-        border: limegreen;
+
         border-style: groove;
-        background-color: aliceblue;
+        margin: auto;
+        width:30%;
+        margin-bottom: 10px;
     }
 
 
