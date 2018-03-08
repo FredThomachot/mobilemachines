@@ -2,14 +2,14 @@
     <div>
         <h1>Carte des machines</h1>
       <gmap-map class="map"
-                :center="{lat:	37.773972, lng:	-122.431297}"
-                :zoom="12"
+                :center="{lat:	30, lng:-60}"
+                :zoom="2"
                 style="width: 100%; height: 800px"
       >
         <gmap-marker
                 :key="index"
                 v-for="machine in machines"
-                :position="{lat:machine.latitude, lng:machine.longitude}"
+                :position="{lat:Number(machine.latitude), lng:Number(machine.longitude)}"
                 :clickable="true"
                 :draggable="true"
                 @click="center=m.position"
@@ -19,10 +19,20 @@
 </template>
 
 <script>
+
+  import axios from 'axios'
+
   export default {
+    created() {
+      axios.get("https://machine-api-campus.herokuapp.com/api/machines")
+        .then(response => {
+          console.log(response.data);
+          this.machines = response.data;
+        })
+    },
     data() {
       return {
-        machines: [{
+        machines: [/*{
           id: 1,
           latitude: 37.751586275,
           longitude: -122.447721511,
@@ -31,12 +41,7 @@
             id: 2,
             latitude: 37.828125,
             longitude: -122.422844,
-          },
-          {
-            id: 3,
-            latitude: 37.759773,
-            longitude: -122.427063,
-          }]
+          }*/]
 
       }
     }

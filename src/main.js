@@ -7,6 +7,7 @@ import MachinesList from './MachinesList.vue'
 import MachinesMap from './MachinesMap.vue'
 import Machine from './Machine.vue'
 
+
 Vue.use(VueRouter);
 
 Vue.use(VueGoogleMaps, {
