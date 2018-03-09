@@ -1,8 +1,16 @@
 <template>
     <div>
+      <hr>
+     <create-machine></create-machine>
+
+      <hr>
        <h1>Liste des machines</h1>
+       <!--<test-fred  :testdeprops="machine.name" v-for="machine in machines" ></test-fred>-->
+
+
+
         <p v-for="machine in machines">
-          <template-machine :name="machine.name" :status="machine.status" :checkedAt="machine.checkedAt"> </template-machine></p>
+          <fred-machine :name="machine.name" :status="machine.status" :checkedAt="machine.checkedAt"> </fred-machine></p>
    </div>
 
 </template>
@@ -11,31 +19,44 @@
 
   import axios from 'axios'
 
-    export default {
-      created() {
+
+
+export default {
+  components: {},
+  created() {
         axios.get("https://machine-api-campus.herokuapp.com/api/machines")
           .then(response => {
             this.machines = response.data;
           })
+          .catch(error=> {
+          this.error = error;});
       },
-      data() {
+      data(){
         return {
-          machines: [/*{
-            id: 1,
-            name: 'Whatelse ?!',
-            status: true,
-            checkedAt: new Date().toLocaleString()
-          }, {
-            id: 2,
-            name: 'Brokken',
-            status: false,
-            checkedAt: new Date().toLocaleString()
-          }*/]
+          machines: [],
+          loading: false,
+          error: null,
+           }
         }
-      },
+  }
 
 
-    }
+
+
+  /*data() {
+    return {
+      machines: [{
+        id: 1,
+        name: 'Whatelse ?!',
+        status: true,
+        checkedAt: new Date().toLocaleString()
+      }, {
+        id: 2,
+        name: 'Brokken',
+        status: false,
+        checkedAt: new Date().toLocaleString()
+      }]
+    }*/
 
 </script>
 
@@ -54,6 +75,7 @@
         margin: auto;
         width:50%;
         margin-bottom: 10px;
+        margin-top: 10px;
     }
 
 

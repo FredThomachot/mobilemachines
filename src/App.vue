@@ -11,8 +11,12 @@
 
         <router-link to="/list" tag="button">Consulter la liste des machines</router-link>
         <router-link to="/map" tag="button">Voir la carte</router-link>
+        <router-link to="/new" tag="button">Ajouter une machine</router-link>
+
+
 
     </div>
+    <br>
 
     <router-view></router-view>
 
@@ -21,6 +25,7 @@
 </template>
 
 <script>
+
 
 
 

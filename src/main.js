@@ -6,6 +6,10 @@ import * as VueGoogleMaps from 'vue2-google-maps'
 import MachinesList from './MachinesList.vue'
 import MachinesMap from './MachinesMap.vue'
 import Machine from './Machine.vue'
+import Nouvellemachine from './Nouvellemachine.vue'
+
+
+
 
 
 Vue.use(VueRouter);
@@ -16,12 +20,15 @@ Vue.use(VueGoogleMaps, {
     }
 });
 
-Vue.component('template-machine',Machine);
+Vue.component('fred-machine',Machine);
+
 
 const routes =[
     {path:'/list', component: MachinesList},
     {path:'/map', component: MachinesMap},
-    {path:'/machine', component: Machine}
+    {path:'/machine', component: Machine},
+    {path:'/new', component: Nouvellemachine},
+
 ];
 
 const router = new VueRouter({

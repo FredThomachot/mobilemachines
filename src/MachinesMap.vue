@@ -2,8 +2,8 @@
     <div>
         <h1>Carte des machines</h1>
       <gmap-map class="map"
-                :center="{lat:	30, lng:-60}"
-                :zoom="2"
+                :center="{lat:	45.188529 , lng:5.724524}"
+                :zoom="12"
                 style="width: 100%; height: 800px"
       >
         <gmap-marker
@@ -11,7 +11,7 @@
                 v-for="machine in machines"
                 :position="{lat:Number(machine.latitude), lng:Number(machine.longitude)}"
                 :clickable="true"
-                :draggable="true"
+                :draggable="false"
                 @click="center=m.position"
         ></gmap-marker>
       </gmap-map>
@@ -59,7 +59,8 @@
     }
     .map {
       margin: auto;
-      max-width:50%;
+      max-width:60%;
+
     }
 
 </style>
